@@ -11,8 +11,9 @@ const Users = () => {
 
     useEffect(() => {
         console.log(userActions.getAll())
-        userService.getAll().then(({data}) => dispatch(userActions.getAll(data)));
-    }, [dispatch])
+        // userService.getAll().then(({data}) => dispatch(userActions.getAll(data)));
+        dispatch(userActions.getAll())
+    }, [])
     return (
         <div>
             {users.map(user => <User key={user.id} user={user}/>)}
